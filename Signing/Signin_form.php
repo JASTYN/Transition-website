@@ -6,11 +6,12 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
+   /* $name = mysqli_real_escape_string($conn, $_POST['name']);*/
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = md5($_POST['password']);
-    $cpass = md5($_POST['cpassword']);
-    $user_type = $_POST['user_type'];
+   /* $cpass = md5($_POST['cpassword']);*/
+    /*$user_type = $_POST['user_type']; */
+    
 
     $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
 
@@ -55,7 +56,7 @@ if(isset($_POST['submit'])){
 
 <div class="form-container">
     <form action="" method="post">
-        <h3>Signin now</h3>
+        <h3>Login</h3>
         <?php
         if(isset($error)){
             foreach($error as $error){
@@ -64,13 +65,12 @@ if(isset($_POST['submit'])){
         };
         ?>
 
-
         <input type="email" name="email" required placeholder="Enter Your email">
         <input type="password" name="password" required placeholder="Enter Your password">
           <input type="submit" name="submit" value="Signin now" class="form-btn">
           <p>Don't have an account? <a href="Signup_form.php">Signup now</a></p>
     </form>
 </div>
-    
+
 </body>
 </html>
