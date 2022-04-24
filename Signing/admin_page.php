@@ -24,16 +24,36 @@ if(!isset($_SESSION['admin_name'])){
 
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <h3>hi, <span>admin</span></h3>
-            <h1>welcome <span><?php echo $_SESSION['admin_name'] ?></span></h1>
-            <p>this is an admin page</p>
-            <a href="Signin_form.php" class="btn">Signin</a>
-            <a href="Signup_form.php" class="btn">Signup</a>
-            <a href="Signout.php" class="btn">Signout</a>
+<section class="showcase">
+        <header>
+            <h2 class="logo">Keep Going</h2>
+        </header>
+       <!-- <video src="video.mp4" muted loop autoplay></video> -->
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>Never Stop</h2>
+            <h3>Moving to your dreams</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.Quis corporis cumque tempora officiis expedita aperiam quo sapiente ducimus ipsa repellendus?</p>
+            <a href="index.html">Move</a>
+            <a href="#"><?php echo $_SESSION['admin_name'] ?></a>
+
+        <?php
+        if(isset($error)){
+            foreach($error as $error){
+                echo '<span class="error-msg">'.$error.'</span>';
+            };
+        };
+        ?>
+
+       
         </div>
-    </div>
-    
+        <ul class="social">
+            <li><a href="#"><img src="instagram.png" alt=""></a></li>
+            <li><a href="#"><img src="instagram.png" alt=""></a></li>
+            <li><a href="#"><img src="instagram.png" alt=""></a></li>
+            <footer class="main-footer active-element"><span class="copyright">&copy;2022 A. Gabriel Hannadi Mary Justyn Dave</span></footer>
+        </ul>
+        
+    </section>
 </body>
 </html>
